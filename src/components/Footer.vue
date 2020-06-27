@@ -1,7 +1,7 @@
 <template>
-  <div class="hello">
-
-  </div>
+  <footer class="hello">
+    <p>&copy; 2020 CERACON Co., Ltd.</p>
+  </footer>
 </template>
 
 <script>
@@ -9,20 +9,18 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
+footer{
+  background-color: black;
   display: inline-block;
-  margin: 0 10px;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #fff;
 }
-a {
-  color: #42b983;
+
+footer p{
+  margin-top: 18px;
+  color: #fff;
 }
 </style>

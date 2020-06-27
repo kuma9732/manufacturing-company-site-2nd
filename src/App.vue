@@ -4,22 +4,25 @@
       <DeskTopNav id="desktop-nav" />
       <MobileNav id="mobile-nav" />
     </div>
-    <div class="view-container">
+    <!-- <div class="view-container"> -->
       <transition name="view">
         <router-view/>
       </transition>
-    </div>
+    <!-- </div> -->
+    <Footer />
   </div>
 </template>
 
 <script>
 import DeskTopNav from '@/components/DeskTopNav.vue'
 import MobileNav from '@/components/MobileNav.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
     DeskTopNav,
-    MobileNav
+    MobileNav,
+    Footer
   }
 }
 </script>
@@ -35,68 +38,57 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+h2 {
+  margin: 50px 0 30px 0;
+  border-bottom: var(--first-color) 2px solid;
+  display: block;
+  font-size: 28px;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: 600;
+}
 a {
   text-decoration: none;
+  color: #000;
 }
-#nav {
-  // padding: 30px;
-  background: #000;
-  a {
-    font-weight: bold;
-    color: #fff;
-    // color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.view-container{
-  // box-sizing: border-box;
-  min-height: 100vh;
-  background: #eee;
-}
-
-#mobile-nav {
+#desktop-nav {
   display: none;
 }
+#mobile-nav {
+  display: flex;
+}
+// .view-container {
+// min-height: 100vh;
+// background: #eee;
+// }
+
 .view-enter-active,
 .view-leave-active{
   transition: opacity .5s, transform .5s;
 }
 
-.view-enter,
-.view-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-}
 .view-enter-to,
 .view-leave {
   opacity: 1;
   transform: translateY(0);
 }
+.view-enter,
+.view-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
 
-@media screen and (max-width: 716px) {
-  #desktop-nav {
+@media (min-width: 1025px){
+  #mobile-nav {
     display: none;
   }
-  #mobile-nav {
+  #desktop-nav {
     display: flex;
-  }
-  .view-container {
-    width: 100%;
-    margin-left: 0;
-  }
-  .view-enter,
-  .view-leave-to{
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  .view-enter-to,
-  .view-leave{
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 </style>

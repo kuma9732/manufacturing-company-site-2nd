@@ -1,7 +1,8 @@
 <template>
-  <div class="about">
-    <h1>採用情報</h1> 
-  </div>
+  <section id="home">
+    <h1>IR情報</h1>
+    
+  </section>
 </template>
 
 <script>

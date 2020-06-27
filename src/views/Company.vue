@@ -1,8 +1,7 @@
 <template>
-  <div class="about">
-    <h1>会社</h1>
-    
-  </div>
+  <section id="home">
+      11111
+  </section>
 </template>
 
 <script>

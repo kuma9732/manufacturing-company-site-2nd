@@ -1,8 +1,8 @@
 <template>
-  <div class="about">
+  <section id="home">
     <h1>IR情報</h1>
     
-  </div>
+  </section>
 </template>
 
 <script>
