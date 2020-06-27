@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-      11111
+  <div class="about">
+    <h1>採用情報</h1> 
   </div>
 </template>
 

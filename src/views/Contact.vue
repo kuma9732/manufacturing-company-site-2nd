@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-      11111
+  <div class="about">
+    <h1>お問い合わせ</h1>
+    
   </div>
 </template>
 

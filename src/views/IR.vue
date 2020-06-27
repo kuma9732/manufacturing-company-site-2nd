@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-      11111
+  <div class="about">
+    <h1>IR情報</h1>
+    
   </div>
 </template>
 

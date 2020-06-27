@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-      11111
+  <div class="about">
+    <h1>This is an about page</h1>
+    1111111111
   </div>
 </template>
 

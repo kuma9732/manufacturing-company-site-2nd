@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-      11111
+  <div class="about">
+    <h1>会社</h1>
+    
   </div>
 </template>
 
