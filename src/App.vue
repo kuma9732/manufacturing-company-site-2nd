@@ -39,12 +39,19 @@ export default {
   box-sizing: border-box;
 }
 h2 {
-  margin: 50px 0 30px 0;
+  margin: 30px 0 30px 0;
   border-bottom: var(--first-color) 2px solid;
   display: block;
   font-size: 28px;
   text-align: left;
   padding-left: 10px;
+  font-weight: 600;
+}
+h3 {
+  background: var(--secondary-color);
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 20px;
   font-weight: 600;
 }
 a {

@@ -1,8 +1,12 @@
 <template>
-  <div class="application-container">
+  <div class="application-wrapper">
+    <div class="application-heading">
+        <h2>アプリケーション</h2>
+        <p>CERA-CONのコンデンサは、現代社会の様々な場面で活用されています。</p>
+    </div>
     <div class="application-content" v-for="application in applications" :key="application.id">
-          <img :src="application.url" alt="">
-          <span class="app-text">{{ application.name }}</span>
+        <img :src="application.url" alt="">
+        <span class="app-text">{{ application.name }}</span>
       </div>
   </div>
 </template>
@@ -11,20 +15,6 @@
 export default {
   data() {
     return {
-      products: [
-        { 
-          name: 'アルミ電解コンデンサ',
-          url: require('@/assets/image/alumi_capacitor_square.jpg')
-        },
-        { 
-          name: '積層セラミックコンデンサ',
-          url: require('@/assets/image/mlcc_square.jpg')
-        },
-        { 
-          name: 'リチウムイオン電池',
-          url: require('@/assets/image/lithium-battery_square.jpg')
-        },
-      ],
       applications: [
         {
           id: '1',
@@ -65,6 +55,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.application-heading p {
+  padding-bottom: 20px;
+}
+.application-heading {
+  text-align: center;
+}
 .app-text{
   position: absolute;
   text-align: center;

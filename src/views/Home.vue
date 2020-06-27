@@ -1,24 +1,15 @@
 <template>
-  <section id="home">
+  <main id="home">
     <div class="first-view">
       <h1>Try for innovation<br><span>イノベーションを生み出す</span></h1>
     </div>
-    <div class="lineup">
-      <div class="lineup-container">
-        <div class="home-lineup__heading">
-          <h2>ラインアップ</h2>
-        </div>
-        <LineUp />
-      </div>
-    </div>
-    <div class="application">
-      <div class="application-heading">
-        <h2>アプリケーション</h2>
-        <p>CERA-CONのコンデンサは、現代社会の様々な場面で活用されています。</p>
-      </div>
-      <Application />   
-    </div>  
-  </section>
+    <section class="lineup">
+      <LineUp />
+    </section>
+    <section class="application">
+      <Application />
+    </section>
+  </main>
 </template>
 
 <script>
@@ -35,14 +26,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.application-heading p {
-  padding-left: 10px;
-  padding-bottom: 20px;
-}
-.lineup,
-.application {
-  margin: 0 20px;
-}
 .first-view {
   width: 100%;
   height: calc(100vh - 80px);
@@ -68,6 +51,12 @@ export default {
     font-size: 28px;
   }
 }
+
+.lineup,
+.application {
+  margin: 0 20px;
+}
+
 @keyframes animateUp{
   0%{
       opacity: 0;
