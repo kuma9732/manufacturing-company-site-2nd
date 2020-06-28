@@ -43,7 +43,8 @@ export default {
   margin: 30px 20px;
 }
 
-.ir-news{
+.ir-news,
+.contact {
   margin: 0 20px;
 }
 
