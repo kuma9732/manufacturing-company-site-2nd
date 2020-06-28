@@ -4,10 +4,12 @@
         <h2>アプリケーション</h2>
         <p>CERA-CONのコンデンサは、現代社会の様々な場面で活用されています。</p>
     </div>
-    <div class="application-content" v-for="application in applications" :key="application.id">
-        <img :src="application.url" alt="">
-        <span class="app-text">{{ application.name }}</span>
+    <div class="application-container">
+      <div class="application-content" v-for="application in applications" :key="application.id">
+          <img :src="application.url" alt="">
+          <span class="app-text">{{ application.name }}</span>
       </div>
+    </div>
   </div>
 </template>
 
@@ -53,15 +55,16 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.application-heading p {
-  padding-bottom: 20px;
-}
 .application-heading {
   text-align: center;
+  
+   p {
+    padding-bottom: 20px;
+  }
 }
-.app-text{
+
+.app-text {
   position: absolute;
   text-align: center;
   color: #fff;
@@ -74,30 +77,54 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.application-content{
+.application-content {
   position: relative;
   height: 200px;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    z-index: 0;
+  }
+
+  &:before {
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    z-index: 10;
+  }
 }
 
-.application-content::before{
-  background-color: rgba(0,0,0,.3);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: ' ';
-  z-index: 10;
+
+/* ==== PC版==== */
+@media (min-width: 768px){ 
+  .application-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 40px;
+  }
+
+  .application-heading p {
+    font-size: 18px;
+    margin: 50px 0 20px;
+  }
+
 }
-.application-content img{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 100%;
-  z-index: 0;
+
+/* ==== PC版 (大) ==== */
+@media (min-width: 1025px){
+  .lineup-content p{
+    font-size: 20px;
+  }
 }
 </style>

@@ -17,7 +17,6 @@ import LineUp from '@/components/LineUp.vue'
 import Application from '@/components/Application.vue'
 
 export default {
-  // name: 'Home',
   components: {
     LineUp,
     Application
@@ -27,23 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 #products {
-  margin-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.lineup,
-.application {
-  margin: 0 20px;
-}
-
-
-/* ==== PC版==== */
-@media (min-width: 768px){ 
-
-}
-
-
-/* ==== PC版 (大) ==== */
-@media (min-width: 1025px){
-
-}
 </style>

@@ -4,11 +4,9 @@
       <DeskTopNav id="desktop-nav" />
       <MobileNav id="mobile-nav" />
     </div>
-    <!-- <div class="view-container"> -->
-      <transition name="view">
-        <router-view/>
-      </transition>
-    <!-- </div> -->
+    <transition name="view">
+      <router-view />
+    </transition>
     <Footer />
   </div>
 </template>
@@ -27,19 +25,21 @@ export default {
 }
 </script>
 <style lang="scss">
-:root{
+:root {
   --body-font: century, "Noto Sans JP", sans-serif;
   --first-color: rgb( 24, 15, 182);
   --secondary-color: rgb(185, 183, 233);
   --third-color: rgb(231, 231, 248);
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 h2 {
-  margin: 30px 0 30px 0;
+  margin: 30px 0;
   border-bottom: var(--first-color) 2px solid;
   display: block;
   font-size: 28px;
@@ -47,6 +47,7 @@ h2 {
   padding-left: 10px;
   font-weight: 600;
 }
+
 h3 {
   background: var(--secondary-color);
   padding: 10px 20px;
@@ -54,28 +55,35 @@ h3 {
   font-size: 20px;
   font-weight: 600;
 }
+
 a {
   text-decoration: none;
   color: #000;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
 
+.router-link-exact-active {
+  color: var(--first-color) !important;
+}
+
 #desktop-nav {
   display: none;
 }
+
 #mobile-nav {
   display: flex;
 }
-// .view-container {
-// min-height: 100vh;
-// background: #eee;
-// }
+
+footer {
+  margin-top: 50px;
+}
 
 .view-enter-active,
-.view-leave-active{
+.view-leave-active {
   transition: opacity .5s, transform .5s;
 }
 
@@ -84,12 +92,29 @@ ul {
   opacity: 1;
   transform: translateY(0);
 }
+
 .view-enter,
 .view-leave-to {
   opacity: 0;
   transform: translateX(-100px);
 }
+/* ==== PC版==== */
+@media (min-width: 768px){ 
+  h2 {
+    margin: 30px 40px;
+  }
+  
+  h3 {
+    background: var(--secondary-color);
+    padding: 20px;
+    margin: 30px 40px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
 
+}
+/* ==== PC版 (大) ==== */
 @media (min-width: 1025px){
   #mobile-nav {
     display: none;

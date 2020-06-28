@@ -1,10 +1,10 @@
 <template>
-  <div class="lineup-contents">
-    <div class="home-lineup__heading">
+  <div class="lineup-wrapper">
+    <div class="lineup-heading">
       <h2>ラインアップ</h2>
     </div>
-    <div v-for="(product, index) in products" :key="index" class="products-lineup__left">
-      <div class="lineup-content">
+    <div class="lineup-container">
+      <div class="lineup-content" v-for="(product, index) in products" :key="index">
         <a href="#">
           <img :src="product.url" alt="">
           <p>{{ product.name }}</p>
@@ -37,39 +37,46 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.lineup-wrapper h2 {
+  margin: 30px 20px;
+}
+
 .lineup-content {
   padding: 10px 0;
+  margin: 0 20px;
 
   img {
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
   }
 
-  p{
-    padding: 25px 30px 0 10px;
+  p {
+    padding-left: 20px;
+    line-height: 100px;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
     color: #111;
   }
+
   a {
     display: flex;
     margin: 0 auto;
     position: relative;
     border: rgba(106, 101, 104, .3) 1px solid;
-    height: 70px;
+    height: 100px;
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
     width: 100%;
 
-    &::before {
+    &:before {
       content: "";
       display: block;
       position: absolute;
       top: 50%;
-      margin-top: -3px;
+      margin-top: -6px;
       width: 0;
       height: 0;
       border-top: 5px solid transparent;
@@ -79,8 +86,8 @@ export default {
       right: 12px;
       margin-right: -8px;
     }
-    
-    &::after {
+
+    &:after {
       background : var(--first-color);
       opacity: .1;
       content:"";
@@ -93,11 +100,71 @@ export default {
       width: 100%;
     }
 
-    &:hover::after {
-      left:0; 
+    &:hover:after {
+      left: 0; 
     }
   }
 }
+ 
+/* ==== PC版==== */
+@media (min-width: 768px){ 
+  .lineup-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 40px 40px 80px;
+  }
 
+  .lineup-wrapper h2 {
+    margin: 30px 40px;
+  }
+
+  .lineup-content {
+    padding: 0;
+    margin: 0;
+
+     img {
+      height: 100px;
+      width: 100px;
+    }
+
+    a {
+      margin: 0 auto;
+      height: 100px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+  .lineup {
+    margin: 0 !important;
+  }
+}
+
+/* ==== PC版 (大) ==== */
+@media (min-width: 1025px){
+  .lineup-content p{
+    font-size: 20px;
+  }
+  .lineup-content {
+    padding: 0;
+
+     img {
+      height: 130px;
+      width: 130px;
+    }
+
+    a {
+      margin: 0 auto;
+      height: 130px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 130px;
+    }
+  }
+}
 
 </style>
