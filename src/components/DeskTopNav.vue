@@ -39,6 +39,7 @@ export default {
     h1 {
       font-size: 24px;
       color: #fff;
+      margin-left: 20px;
     }
   }
   
@@ -56,7 +57,7 @@ export default {
       cursor: pointer;
 
       &.router-link-exact-active {
-        color: #108852;
+        color: #00af5d;
       }
       &:hover {
         background: var(--first-color);

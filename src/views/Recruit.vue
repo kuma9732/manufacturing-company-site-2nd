@@ -2,9 +2,9 @@
   <main id="recruit">
     <div class="recruit-heading">
       <h3>会社情報</h3>
+      <h2>求める人材</h2>
     </div>
     <section class="recruit-text">
-      <h2>求める人材</h2>
       <h4>『共ににモノづくりに没頭してくれる方を探しています』</h4>
       <p>近年、自動車分野・産業機器分野に注力し、事業を拡大しています。この分野は電子機器の高機能化により電子部品に求める要求レベルはますます高まり、我々はさらなるレベルアップが必要です。当社は、失敗を恐れず、粘り強く、柔軟な発想を持った『あなた』を待っています。</p>   
     </section>
@@ -20,27 +20,35 @@
       </div>
     </section>
     <section class="contact">
-      <Contact />
+      <ContactBox />
     </section>
   </main>
 </template>
 
 <script>
-import Contact from '@/components/Contact.vue'
+import ContactBox from '@/components/ContactBox.vue'
 
 export default {
-  // name: 'Home',
   components: {
-    Contact
+    ContactBox
   }
 }
 </script>
 
 <style lang="scss" scoped>
+#recruit {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 30px 20px;
+}
+
 .recruit-text,
-.recruit-info,
+.recruit-contents,
 .contact {
-  margin: 0 20px;
+  margin: 0 20px 50px;
 }
 
 .recruit-text h4 {
@@ -49,20 +57,12 @@ export default {
 
 .recruit-text p {
   line-height: 1.5rem;
-  padding: 0 10px;
 }
 
-.recruit-contents h2 {
-  margin: 0 0 10px 0;
-  border-bottom: var(--first-color) 2px solid;
-  display: block;
-  font-size: 28px;
-}
 
 .recruit-contents ul li {
   height: 60px;
   line-height: 60px;
-  padding: 0 10px;
 }
 
 .recruit-contents a {
@@ -96,15 +96,33 @@ export default {
   }
 }
 
-
 /* ==== PC版==== */
 @media (min-width: 768px){ 
+  .recruit-text,
+  .recruit-contents {
+    margin: 0 40px 100px;
+  }
+  .contact {
+    margin: 0 40px 50px;
+  }
 
+  h2 {
+    margin: 30px 40px;
+  }
+
+  .recruit-text h4 {
+    font-size: 24px;
+  }
+
+  .recruit-text p {
+    line-height: 1.7;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .recruit-contents a {
+    font-size: 20px;
+  }
 }
 
-
-/* ==== PC版 (大) ==== */
-@media (min-width: 1025px){
-
-}
 </style>

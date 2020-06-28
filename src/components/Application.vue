@@ -61,7 +61,11 @@ export default {
   
    p {
     padding-bottom: 20px;
+    margin: 0 20px;
   }
+}
+.application-container {
+  margin: 0 20px;
 }
 
 .app-text {
@@ -100,31 +104,29 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    content: ' ';
+    content: '';
     z-index: 10;
   }
 }
-
 
 /* ==== PC版==== */
 @media (min-width: 768px){ 
   .application-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0 40px;
+    margin: 0 40px 100px;
   }
 
   .application-heading p {
-    font-size: 18px;
-    margin: 50px 0 20px;
+    font-size: 20px;
+    margin: 50px 40px 10px;
   }
-
 }
 
 /* ==== PC版 (大) ==== */
 @media (min-width: 1025px){
   .lineup-content p{
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 </style>

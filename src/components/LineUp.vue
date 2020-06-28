@@ -1,7 +1,7 @@
 <template>
   <div class="lineup-wrapper">
     <div class="lineup-heading">
-      <h2>ラインアップ</h2>
+      
     </div>
     <div class="lineup-container">
       <div class="lineup-content" v-for="(product, index) in products" :key="index">
@@ -47,15 +47,15 @@ export default {
   margin: 0 20px;
 
   img {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
   }
 
   p {
-    padding-left: 20px;
-    line-height: 100px;
+    padding-left: 10px;
+    line-height: 70px;
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #111;
   }
@@ -65,7 +65,7 @@ export default {
     margin: 0 auto;
     position: relative;
     border: rgba(106, 101, 104, .3) 1px solid;
-    height: 100px;
+    height: 70px;
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
@@ -112,7 +112,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    margin: 40px 40px 80px;
+    margin: 50px 40px 100px;
   }
 
   .lineup-wrapper h2 {
@@ -135,6 +135,8 @@ export default {
 
     p {
       font-size: 16px;
+      line-height: 100px;
+      padding-left: 20px;
     }
   }
   .lineup {

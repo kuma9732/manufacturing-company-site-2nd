@@ -39,7 +39,7 @@ export default {
 }
 
 h2 {
-  margin: 30px 0;
+  margin: 30px 20px;
   border-bottom: var(--first-color) 2px solid;
   display: block;
   font-size: 28px;
@@ -64,10 +64,6 @@ a {
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-.router-link-exact-active {
-  color: var(--first-color) !important;
 }
 
 #desktop-nav {

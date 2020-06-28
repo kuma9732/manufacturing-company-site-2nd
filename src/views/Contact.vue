@@ -44,19 +44,23 @@
 
 <script>
 export default {
-  // name: 'Home',
   components: {
-    // DeskTopNav
   }
 }
 </script>
 
 <style lang="scss" scoped>
+#contact {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .contact-wrapper {
   margin: 0 20px;
 
   p {
     margin: 20px 0;
+    font-size: 18px;
   }
 }
 
@@ -102,6 +106,7 @@ export default {
   display: inline-block;
   margin-bottom: 10px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .contact-box input,
@@ -112,9 +117,43 @@ export default {
 
 /* ==== PC版==== */
 @media (min-width: 768px){ 
+  .contact-wrapper {
+    margin: 0 40px;
+  }
 
+  .contact-box input,
+  .contact-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .contact-box dl {
+    display: flex;
+  }
+
+  .contact-box dt {
+    width: 35%;
+    padding-top: 30px;
+    padding-left: 30px;
+    border: 1px solid var(--secondary-color);
+    border-right: none;
+    border-bottom: none;
+    font-size: 18px;
+  }
+
+  .contact-box dd {
+    border: 1px solid var(--secondary-color);
+    border-bottom: none;
+    width: 65%;
+  }
+
+  .contact-box input[type=submit] {
+    padding: 15px 100px;
+    font-weight: 600;
+    font-size: 20px;
+  }
 }
-
 
 /* ==== PC版 (大) ==== */
 @media (min-width: 1025px){

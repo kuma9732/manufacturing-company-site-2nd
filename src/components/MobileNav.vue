@@ -44,9 +44,6 @@ export default {
   width: 100%;
   height: 80px;
   background: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 110;
 
   .nav-name {
@@ -59,6 +56,7 @@ export default {
     h1 {
       font-size: 24px;
       color: #fff;
+      margin-left: 20px;
     }
   }
   .is-active span:nth-child(1) {
