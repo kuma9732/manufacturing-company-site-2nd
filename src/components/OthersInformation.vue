@@ -1,13 +1,15 @@
 <template>
-  <div class="related-info-wrapper">
-    <div class="related-info-heading">
+  <div class="others-info-wrapper">
+    <div class="others-info-heading">
         <h2>その他</h2>
     </div>
-    <div class="related-info-content" v-for="info in othersInfomation" :key="info.id">
-      <a href="#">
-        <img :src="info.url" alt="">
-        <p>{{ info.name }}</p>
-      </a>
+    <div class="others-info-container">
+      <div class="others-info-content" v-for="info in othersInfomation" :key="info.id">
+        <a href="#">
+          <img :src="info.url" alt="">
+          <p>{{ info.name }}</p>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +36,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.related-info-content{
+.others-info-heading h2 {
+  margin: 40px 20px;
+}
+
+.others-info-container {
+  margin: 0 20px;
+}
+
+.others-info-content {
   margin-top: 20px;
   padding: 0;
   text-align: center;
@@ -44,37 +54,53 @@ export default {
   overflow: hidden;
   float: left;
   margin-right: 20px;
-}
+  
+  img {
+    width: 100%; 
+    height: 100%;
+    display: block;
+    transition-duration: .3s;
+    
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: .3s;
+    }
+  }
 
-.related-info-content img {
-  width: 100%; 
-  height: 100%;
-  display: block;
-	transition-duration: .3s;
-}
+  p {
+    font-size: 16px;
+    background-color: rgba(0,0,0,.6);
+    margin-bottom: 0;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+  }
 
-.related-info-content img:hover {
-	transform: scale(1.1);
-	transition-duration: .3s;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 }
+/* ==== PC版==== */
+@media (min-width: 768px){ 
+  .others-info-heading h2 {
+    margin: 30px 40px 20px;
+  }
 
-.related-info-content p{
-  font-size: 16px;
-  background-color: rgba(0,0,0,.6);
-  margin-bottom: 0;
-  padding: 10px 0;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  font-weight: 600;
-  color: #fff;
-}
+  .others-info-container {
+    margin: 0 40px;
+  }
 
-.related-info-content a{
-  text-decoration: none;
-  color: #fff;
+  .others-info-content {
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
+  }
 }
 
 </style>

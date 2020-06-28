@@ -3,11 +3,11 @@
     <div class="related-info-heading">
         <h2>関連情報</h2>
     </div>
-    <div class="related-info-content" v-for="application in applications" :key="application.id">
-      <div class="lineup-content">
+    <div class="related-info-container">
+      <div class="related-content" v-for="application in applications" :key="application.id">
         <a href="#">
           <img :src="application.url" alt="">
-          <p class="app-text">{{ application.name }}</p>
+          <p class="related-info-text">{{ application.name }}</p>
         </a>
       </div>
     </div>
@@ -51,29 +51,44 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.related-info-wrapper {
+  max-width: 1200px;
+
+  h2 {
+    margin: 30px 20px;
+  }
+}
+
+.related-info-container {
+  margin: 0 20px;
+}
+
 p {
-    padding: 25px 30px 0 10px;
+    line-height: 100px;
+    padding-left: 20px;
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
     color: #111;
     font-weight: 600;
-  }
-img {
-    height: 70px;
-    width: 70px;
 }
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
 a {
     display: flex;
     margin: 0 auto;
     position: relative;
     border: rgba(106, 101, 104, .3) 1px solid;
-    height: 70px;
+    height: 100px;
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
     width: 100%;
 
-    &::before {
+    &:before {
       content: "";
       display: block;
       position: absolute;
@@ -89,7 +104,7 @@ a {
       margin-right: -8px;
     }
     
-    &::after {
+    &:after {
       background : var(--first-color);
       opacity: .1;
       content:"";
@@ -102,8 +117,65 @@ a {
       width: 100%;
     }
 
-    &:hover::after {
-      left:0; 
+    &:hover:after {
+      left: 0; 
+    }
+}
+/* ==== PC版==== */
+@media (min-width: 768px){ 
+  .related-info-wrapper h2 {
+    margin: 30px 40px;
+  }
+
+
+  .related-info-container {
+    margin: 0 40px;
+  }
+  .related-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .related-content {
+    padding: 0;
+    margin: 0;
+
+     img {
+      height: 100px;
+      width: 100px;
+    }
+
+    a {
+      margin: 0 auto;
+      height: 100px;
+    }
+
+    p {
+      font-size: 20px;
     }
   }
+}
+
+/* ==== PC版 (大) ==== */
+@media (min-width: 1025px){
+  .related-content {
+    padding: 0;
+
+     img {
+      height: 130px;
+      width: 130px;
+    }
+
+    a {
+      margin: 0 auto;
+      height: 130px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 130px;
+    }
+  }
+}
 </style>
